@@ -249,9 +249,27 @@
         color: var(--c-purple);
     }
 
+    #menu-toggle {
+        display: none;
+        cursor: pointer;
+    }
+
     @media screen and (width<=980px) {
         header nav {
             display: none;
+        }
+
+        #menu-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--c-purple);
+            padding: 4px;
+            transition: background-color 500ms ease-in;
+        }
+
+        #menu-toggle:hover {
+            background-color: var(--c-purple-50);
         }
     }
 }
