@@ -1,16 +1,32 @@
-const faqItems = document.querySelectorAll(".faq-item");
+const menuButton = document.getElementById("menu-toggle-button");
+const menuClose = document.getElementById("menu-close-button");
+const header = document.getElementById("header");
 
-faqItems.forEach((item) => {
-    item.addEventListener("click", () => {
-        faqItems.forEach((i) => {
-            i.classList.remove("active");
-        });
+const faqs = document.querySelectorAll(".faq-item")
 
-        if (item.classList.contains("active")) {
-            item.classList.remove("active");
-        } else {
-            item.classList.add("active");
-        }
-
+// event listeners
+menuButton.addEventListener("click", openMobileMenu);
+menuClose.addEventListener("click", closeMobileMenu);
+faqs.forEach((faq) => {
+    // add a click event listener to every faq item
+    faq.addEventListener("click", () => {
+        closeAllFaqTabs();
+        faq.classList.add("active");
     })
 })
+
+// event handlers FNs
+function openMobileMenu() {
+    header.classList.add("mobile-menu-active");
+}
+
+function closeMobileMenu() {
+    header.classList.remove("mobile-menu-active");
+}
+
+function closeAllFaqTabs() {
+    faqs.forEach((faq) => {
+        faq.classList.remove("active");
+    })
+}
+

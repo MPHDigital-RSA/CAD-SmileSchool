@@ -51,7 +51,6 @@
         font-weight: 600;
         padding: 9px 16px;
         border-radius: 40px;
-        border: none;
         box-shadow: 0 2px 20px var(--c-black-50);
         cursor: pointer;
         border: 2px solid var(--c-purple);
@@ -249,39 +248,75 @@
         color: var(--c-purple);
     }
 
-    #menu-toggle {
+    #menu-toggle-button {
         display: none;
         cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--c-purple);
+        padding: 4px;
+        transition: background-color 500ms ease-in;
+    }
+
+    #menu-close-button {
+        display: none;
     }
 
     @media screen and (width<=980px) {
+
         header nav {
             display: none;
         }
 
-        #menu-toggle {
+        #menu-toggle-button {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--c-purple);
-            padding: 4px;
-            transition: background-color 500ms ease-in;
         }
 
-        #menu-toggle:hover {
+        #menu-toggle-button:hover {
             background-color: var(--c-purple-50);
+        }
+
+        header.mobile-menu-active nav {
+            display: flex;
+            background-color: var(--c-purple);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        header.mobile-menu-active nav ul {
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            width: inherit;
+        }
+
+        #menu-close-button {
+            display: block;
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            cursor: pointer;
+        }
+
+        header a {
+            font-size: 24px;
+        }
+
+        header a:hover {
+            color: var(--c-navy);
         }
     }
 }
 
 @layer hero {
     .hero {
-        background-blend-mode: multiply;
-        /* background: radial-gradient(circle at center, var(--c-navy-50) 0, var(--c-navy), var(--c-navy) 100%), url(images/hero-image.png); */
         background-image: url(images/background.png);
         background-position: center;
         background-repeat: no-repeat;
-
         background-size: cover;
         min-height: 100vh;
         padding-top: 120px;
@@ -523,6 +558,23 @@
         gap: 10px;
     }
 
+    .faq-item.active {
+        height: 100%;
+    }
+
+    .faq-item .question {
+        color: var(--c-purple);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .answer {
+        color: var(--c-navy-50);
+        margin-top: 20px;
+    }
+
+
     .faq-item {
         background-color: var(--c-purple-10);
         padding: 20px;
@@ -535,21 +587,6 @@
         transition: all 500ms ease-in;
     }
 
-    .faq-item.active {
-        height: 100%;
-    }
-
-    .faq-item .question {
-        color: var(--c-purple);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .faq-item .answer {
-        color: var(--c-navy-50);
-        margin-top: 20px;
-    }
 }
 
 @layer footer {

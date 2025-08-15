@@ -11,20 +11,21 @@
 
 <body>
 
-    <header>
+    <header id="header">
         <div class="container">
-            <img src="images/logo.svg" alt="">
+            <img src="images/logo.svg" alt="smile school logo image">
 
             <nav>
                 <ul>
+                    <li id="menu-close-button"><img src="/images/close.svg" alt=""></li>
                     <li><a href="#">courses</a></li>
                     <li><a href="#">pricing</a></li>
                     <li><a href="#">login</a></li>
                 </ul>
             </nav>
 
-            <div id="menu-toggle">
-                <img src="images/menu.svg" alt="">
+            <div id="menu-toggle-button">
+                <img src="/images/menu.svg" alt="">
             </div>
         </div>
     </header>
@@ -305,12 +306,12 @@
             <h2>FAQ</h2>
 
             <div class="container faq-grid" id="faq-grid">
-                <div class="faq-item">
+                <div class="faq-item active">
                     <div class="question">
                         <h3>What is SmileSchool all about?</h3>
                         <img src="images/plus.svg" alt="">
                     </div>
-                    <p class="answer">
+                    <p class="answer" data-answer="1">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna
                         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -325,7 +326,7 @@
                         <h3>What is SmileSchool all about?</h3>
                         <img src="images/plus.svg" alt="">
                     </div>
-                    <p class="answer">
+                    <p class="answer" data-answer="2">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna
                         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -340,7 +341,7 @@
                         <h3>What is SmileSchool all about?</h3>
                         <img src="images/plus.svg" alt="">
                     </div>
-                    <p class="answer">
+                    <p class="answer" data-answer="3">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna
                         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -355,7 +356,7 @@
                         <h3>What is SmileSchool all about?</h3>
                         <img src="images/plus.svg" alt="">
                     </div>
-                    <p class="answer">
+                    <p class="answer " data-answer="4">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna
                         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -366,6 +367,7 @@
                     </p>
                 </div>
             </div>
+
         </section>
     </main>
 
